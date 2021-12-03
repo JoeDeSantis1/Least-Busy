@@ -1,8 +1,4 @@
+/* Assures the google maps widget search result shows in front of the add address popover */
 .pac-container {
     z-index: 1700;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: #261e3d;
 }

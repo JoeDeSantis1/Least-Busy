@@ -17,9 +17,6 @@ const useStyles = makeStyles({
       backgroundColor: blue[100],
       color: blue[600],
     },
-    dialog: {
-        backgroundColor: grey[800],
-    }
 });
 
 const initialState = {

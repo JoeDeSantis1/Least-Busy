@@ -9,13 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import '../styles.css';
 
 const useStyles = makeStyles((theme) => ({
-    textField: {
-        marginRight: 8,
-        width: 176
-    },
-    button: {
-        justifyContent: 'center'
-    },
     input: {
         width: 400
     }
