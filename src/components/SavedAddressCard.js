@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
-import { Typography, Card, CardActionArea, CardActions, CardContent, Button, Grid, IconButton } from '@material-ui/core';
+import { Typography, Card, CardActions, CardContent, Button, Grid, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CheckIcon from '@material-ui/icons/Check';
 
 const useStyles = makeStyles({
-    root: {
-        backgroundColor: '#FFCCBC',
-    },
     card: {
         background: 'linear-gradient(180deg, rgba(152,168,255,1) 0%, rgba(121,142,255,1) 56%, rgba(98,122,255,1) 100%)',
         width: '350px',
-      },
-    media: {
-        height: '140px',
-    },
-    outsideCard: {
-        paddingTop: '15px',
-        paddingBottom: '15px',
     },
     text: {
       color: '#4B3F72'
@@ -35,7 +25,6 @@ const SavedAddressCard = (props) => {
     }
     
     return(
-        <div>
         <Card className={classes.card} raised={true}>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -44,9 +33,6 @@ const SavedAddressCard = (props) => {
                 <Typography variant="body2" color="textSecondary" component="p">
                     {`${number} ${street} ${city}, ${state} ${zip}`}
                 </Typography>
-                {/* <Typography variant="body2" color="textSecondary" component="p">
-                    {`${city}, ${state} ${zip}`}
-                </Typography> */}
             </CardContent>
             { selected ? 
             <CardActions>
@@ -66,7 +52,6 @@ const SavedAddressCard = (props) => {
             </CardActions>
             }
         </Card>
-        </div>
     )
 }
 

@@ -12,9 +12,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
-    about: {
-      flexGrow: 1,
-    },
     title: {
       flexGrow: 1,
     },

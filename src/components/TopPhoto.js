@@ -1,9 +1,6 @@
 import React from 'react';
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { Card, CardMedia, CardContent, Typography, Grid, FormHelperText, Fade } from '@material-ui/core';
-import Carousel from 'react-slick';
-
-import { themeHome } from '../styles/theme';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid} from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -19,35 +16,10 @@ const useStyles = makeStyles({
   divMargin: {
     marginTop: '64px',
   },
-  media: {
-    maxWidth: '100%',
-    height: 450,
-    paddingBottom: 0,
-  },
-  text: {
-    position: 'absolute',
-    fontFamily: 'Fugaz One',
-    color: 'white',
-    fontSize: '150px',
-    top: '145px',
-    left: '560px',
-    zIndex: 2
-  },
-  div: {
-    position: 'absolute',
-    backgroundColor: '#0e2d96',
-    borderRadius: '30px',
-    opacity: '0.5',
-    top: '125px',
-    left: '437px',
-    height: '200px',
-    width: '1000px',
-  }
 });
 
 const TopPhoto = () => {
   const randomNum = Math.floor(Math.random() * 4) + 1;
-  console.log(randomNum);
   const classes = useStyles();
 
   return (
@@ -72,11 +44,7 @@ const TopPhoto = () => {
                 <div>
                   <img src='Restaurant4_scaled.jpg' alt='Restaurant1' className={classes.root}/>
                 </div>
-              }
-              {/* <Typography className={classes.text} variant='h1'>
-                    {text}
-                  </Typography>
-                  <div className={classes.div} /> */}   
+              }  
           </Grid>
         </div>
   );

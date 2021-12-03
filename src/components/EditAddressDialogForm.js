@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 8,
         width: 176
     },
-    button: {
-        justifyContent: 'center'
-    }
 }))
 
 const initialState = {
@@ -40,8 +37,6 @@ const AddAddressDialogForm = (props) => {
 
     const handleCancel = () => {
         console.log(selectedAddress[0].label);
-        // setFormData(initialState);
-        // onClose();
     }
 
     const handleChange = ({ target }) => {

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import { Typography, Grid, Paper, Card, CardContent, CardHeader, Divider, Button, CircularProgress } from '@material-ui/core';
+import { Typography, Grid, Paper, Card, CardContent, Divider, Button, CircularProgress } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
 import NavBar from './NavBar';
 import PlaceCard from './PlaceCard';
-import PlaceCard2 from './PlaceCard2';
 import AddressDialogPopover from './AddressDialogPopover';
 import WarningDialogPopover from './WarningDialogPopover';
-import DashboardBackground from './DashboardBackground';
+import DashboardBanner from './DashboardBanner';
 import HomepageFooter from './HomepageFooter';
 import { themeDashboard } from '../styles/theme';
 
@@ -22,18 +21,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         whiteSpace: 'wrap',
         marginBottom: theme.spacing(1),
-    },
-    leftPaper: {
-        padding: theme.spacing(1),
-        background: 'rgba(208,234,240,0)',
-        whiteSpace: 'nowrap',
-        marginBottom: theme.spacing(1),
-    },
-    gridItem: {
-        backgroundColor: 'lightgreen'
-    },
-    card: {
-        maxWidth: 345,
     },
     titleText: {
         fontSize: '80px',
@@ -90,15 +77,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             fontSize: '11px',
         },   
-    },
-    forYourInformation: {
-        width: '80%',
-        maxWidth: '640px',
-        marginTop: '10px',
-        flexBasis: '80%',
-    },
-    media: {
-        height: 140,
     },
     text: {
         textAlign: 'center',
@@ -227,7 +205,7 @@ const Dashboard = () => {
                     const hours = findCurrentHours(place.placeInfo);
                     const completeAddress = `${address.number} ${address.street} ${address.city}, ${address.state} ${address.zip_code}`;
                     const busyTimes = findBusyTimes(place, true);
-                    const placeCard = <PlaceCard2 
+                    const placeCard = <PlaceCard 
                         name={place.placeInfo.name} 
                         address={completeAddress}
                         src={place.placeInfo.photo}
@@ -257,8 +235,7 @@ const Dashboard = () => {
                     const hours = findCurrentHours(place);
                     const completeAddress = `${address.number} ${address.street} ${address.city}, ${address.state} ${address.zip_code}`;
                     const busyTimes = findBusyTimes(place, false);
-                    console.log(busyTimes);
-                    const placeCard = <PlaceCard2 
+                    const placeCard = <PlaceCard 
                         name={place.name} 
                         address={completeAddress}
                         src={place.photo}
@@ -420,14 +397,12 @@ const Dashboard = () => {
     }
 
     const whenIGetThere = (address) => {
-        console.log(address);
         setSelectedAddress(address);
         let formattedAddress;
         const email = user.result.email;
             
         if(address !== undefined) {
             formattedAddress = address.replace(',', '').replaceAll(' ', '+');
-            console.log(formattedAddress);
         }
 
         if(formattedAddress !== null && address !== undefined) {
@@ -482,7 +457,6 @@ const Dashboard = () => {
     }
 
     const handleDialogOpen = () => {
-        console.log(openDialog);
         setOpenDialog(true);
     };
     
@@ -507,7 +481,7 @@ const Dashboard = () => {
                 <NavBar />
             </div>
             <div>
-                <DashboardBackground />
+                <DashboardBanner />
             </div>
             <div>
                 <Typography className={classes.titleText} align='center'>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import { Typography, Grid, Card, CardHeader, CardActions, Button } from '@material-ui/core';
+import { Typography, Grid, Card, CardActions, Button } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import HowItWorksElement from './HowItWorksElement';
 
@@ -9,9 +9,6 @@ import { themeHome } from '../styles/theme';
 import Auth from './Auth';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        maxWidth: '400px',
-    },
     signUpMargin: {
         marginTop: '20px',
     },
@@ -34,13 +31,6 @@ const useStyles = makeStyles((theme) => ({
     divMargin: {
         marginTop: '10px'
     },
-    media: {
-        height: 140,
-    },
-    outsideCard: {
-        paddingTop: '15px',
-        paddingBottom: '15px',
-    },
     title: {
         fontFamily: 'Fugaz One', 
         fontSize: '200px',
@@ -58,33 +48,12 @@ const useStyles = makeStyles((theme) => ({
         },
 
     },
-    scroll: {
-        position: 'fixed',
-        left: '885px',
-        top: '780px',
-    },
-    arrows: {
-        paddingLeft: '40px'
-    }
 }));
 
 const HowItWorks = () => {
-    const [showScrollText, setShowScrollText] = useState(true);
     const [openAuth, setOpenAuth] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener('scroll', toggleFloatingButtons);
-    }, [])
-
     const classes = useStyles();
-
-    const toggleFloatingButtons = () => {
-        if(window.pageYOffset > 325) {
-            setShowScrollText(false);
-        } else {
-            setShowScrollText(true);
-        }
-    }
 
     const handleAuthOpen = () => {
         setOpenAuth(true);

@@ -4,25 +4,12 @@ import { DialogActions, DialogContent, DialogContentText, DialogTitle, Dialog, I
 
 import AutoComplete from 'react-google-autocomplete';
 
-import { makeStyles } from '@material-ui/core/styles';
-
 import '../styles.css';
-
-const useStyles = makeStyles((theme) => ({
-    textField: {
-        marginRight: 8,
-        width: 176
-    },
-    button: {
-        justifyContent: 'center'
-    }
-}))
 
 
 const AddAddressDialogForm = (props) => {
     let addressObj = {};
     const { onClose, open } = props;
-    const classes = useStyles();
 
     const findAddressComponent = (componentType) => {
         const componentIndex = addressObj.address_components.findIndex(el => el.types[0] === componentType);
@@ -38,13 +25,6 @@ const AddAddressDialogForm = (props) => {
 
     const showMe = () => {
         const address = `${findAddressComponent('street_number')} ${findAddressComponent('route')} ${findAddressComponent('locality')}, ${findAddressComponent('administrative_area_level_1')} ${findAddressComponent('postal_code')}`
-        // const address = {
-        //     number: findAddressComponent('street_number'),
-        //     street: findAddressComponent('route'),
-        //     city: findAddressComponent('locality'),
-        //     state: findAddressComponent('administrative_area_level_1'),
-        //     zip: findAddressComponent('postal_code'),
-        // }
         
         onClose(address);
     }
@@ -64,7 +44,6 @@ const AddAddressDialogForm = (props) => {
             </DialogContentText>
                 <div>
                     <Input
-                        className={classes.input}
                         fullWidth
                         color="secondary"
                         inputComponent={({ inputRef, onFocus, onBlur, ...props }) => (

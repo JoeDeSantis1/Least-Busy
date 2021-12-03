@@ -8,8 +8,7 @@ import NavBar from './NavBar';
 import AddAddressDialogForm from './AddAddressDialogForm';
 import AddResDialogForm from './AddResDialogForm';
 import WarningDialogPopover from './WarningDialogPopover';
-import SavedResCardCarousel from './SavedResCardCarousel';
-import SavedAddressCarousel from './SavedAddressCarousel';
+import SavedResCard from './SavedResCard';
 import SavedAddressCard from './SavedAddressCard';
 import SearchBar from './SearchBar';
 import ChangePass from './ChangePass';
@@ -32,27 +31,8 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         overflowX: 'auto'
     },
-    input: {
-        backgroundColor: 'white'
-    },
-    paper1: {
-        background: 'rgba(208,234,240,0)',
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        whiteSpace: 'nowrap',
-        margin: theme.spacing(1),
-        width: 1100,
-        zIndex: '10'
-    },
-    paper2: {
-        background: 'rgba(208,234,240,0)',
-        padding: theme.spacing(1),
-        marginTop: '25px',
-        textAlign: 'center',
-        whiteSpace: 'nowrap',
-        margin: theme.spacing(1),
-        width: 1200,
-        zIndex: '10'
+    resCard: {
+        paddingBottom: '15px'
     },
     allPaper: {
         paddingTop: '18px',
@@ -76,17 +56,6 @@ const useStyles = makeStyles((theme) => ({
     },
     savedAddressesTitle: {
         paddingLeft: '3%',
-    },
-    forYourInformation: {
-        width: '90%', 
-        paddingTop: '30px', 
-        maxWidth: '1024px',
-    },
-    userInfo: {
-        paddingTop: '80px',
-    },
-    sectionTitle: {
-        textDecoration: 'underline'
     },
     textButton: {
         textAlign: 'center',
@@ -117,22 +86,16 @@ const Profile = () => {
     const [addresses, setAddresses] = useState([]);
     const [addressLabels, setAddressLabels] = useState([]);
     const [openAddAddressDialog, setOpenAddAddressDialog] = useState(false);
-    // const [openEditAddressDialog, setOpenEditAddressDialog] = useState(false);
     const [openChangePassword, setOpenChangePassword] = useState(false);
     const [openAddResDialog, setOpenAddResDialog] = useState(false);
     const [openWarning, setOpenWarning] = useState(false);
     const [warning, setWarning] = useState('');
-    const [addAllGood, setAddAllGood] = useState(false);
-    // const [editAllGood, setEditAllGood] = useState(false);
-    const [changeAllGood, setChangeAllGood] = useState(false);
-    const [resAllGood, setResAllGood] = useState(false);
     const [selectedPlaces, setSelectedPlaces] = useState([]);
     const [refreshToggle, setRefreshToggle] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [edit, setEdit] = useState(false);
     const user = JSON.parse(localStorage.getItem('profile'));
     const fullName = user.result.name;
-   // let selectedAddress = [initialState];
 
     useEffect(() => {
         const email = user.result.email;
@@ -159,11 +122,9 @@ const Profile = () => {
                 
                 setPlaces(placeNames);
                 setFilteredPlaces(placeNames);
-                console.log(places);
             }
             if(data.addresses) {
                 setAddresses(data.addresses);
-                console.log(data.addresses);
             }
 
             setIsLoading(false);
@@ -244,31 +205,6 @@ const Profile = () => {
             }
     }
 
-    // const editAddress = (formData) => {
-    //     const email = user.result.email;
-    //     const addressIdentifier = selectedAddress.label;
-
-
-    //     for (const [key, value] of Object.entries(formData)) {
-    //         if (value === "") {
-    //             formData[key] = selectedAddress[key];
-    //         }
-    //     }
-
-    //     fetch('http://localhost:4000/user/editAddress', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({email: email, editedAddress: formData, addressIdentifier: addressIdentifier})
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         data.message === 'success' ? setEditAllGood(true) : setEditAllGood(false);
-    //         setRefreshToggle(!refreshToggle);            
-    //     })
-    // }
-
     const addAddress = (addressObj) => {
         addressObj.email = user.result.email;
 
@@ -327,23 +263,6 @@ const Profile = () => {
     const handleAddAddressDialogClose = () => {
         setOpenAddAddressDialog(false);
     };
-
-    // const handleEditAddressDialogOpen = () => {
-    //     if(addressLabels.length > 1) {
-    //         setWarning('You can only edit one address at a time');
-    //         setOpenDelete(true);
-    //     } else if (addressLabels.length === 0) {
-    //         setWarning('Please select an address to edit'); 
-    //         setOpenDelete(true);
-    //     } else {
-    //         selectedAddress = addresses.filter(el => el.label === addressLabels[0]);
-    //         setOpenEditAddressDialog(true);
-    //     }
-    // };
-    
-    // const handleEditAddressDialogClose = () => {
-    //     setOpenEditAddressDialog(false);
-    // };
 
     const handleAddResDialogOpen= () => {
         setOpenAddResDialog(true);
@@ -458,7 +377,12 @@ const Profile = () => {
                                 :
                                 places.length > 0 ?
                                 <div className={classes.carousel}>
-                                    <SavedResCardCarousel places={filteredPlaces} handleResSelectChange={handleResSelectChange}/>
+                                    {filteredPlaces.map(el => {
+                                            return <div className={classes.resCard}>
+                                                <SavedResCard place={el} selectedRes={handleResSelectChange}/>
+                                            </div>
+                                            })
+                                    }
                                 </div>
                                 :
                                 <Grid item sm={6} style={{marginTop: '20px', marginBottom: '20px', maxWidth: '100%'}}>
@@ -469,7 +393,7 @@ const Profile = () => {
                                     </Card>
                                 </Grid>
                                 }
-                                <AddResDialogForm open={openAddResDialog} onClose={handleAddResDialogClose} addRes={addRes} user={user} allGood={resAllGood} />
+                                <AddResDialogForm open={openAddResDialog} onClose={handleAddResDialogClose} addRes={addRes} />
                                 <WarningDialogPopover open={openWarning} onClose={handleDeleteClose} warning={warning} />
                             </Grid>
                         </Grid>
@@ -513,8 +437,7 @@ const Profile = () => {
                                             </Card>
                                         </Grid>
                                     }
-                                    <AddAddressDialogForm open={openAddAddressDialog} onClose={handleAddAddressDialogClose} addAddress={addAddress} user={user} allGood={addAllGood} />
-                                    {/* <EditAddressDialogForm open={openEditAddressDialog} onClose={handleEditAddressDialogClose} editAddress={editAddress} selectedAddress={selectedAddress} user={user} allGood={editAllGood} /> */}
+                                    <AddAddressDialogForm open={openAddAddressDialog} onClose={handleAddAddressDialogClose} addAddress={addAddress} />
                                 </Grid>
                             </Grid>
                         </Grid>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { DialogActions, DialogContent, DialogContentText, DialogTitle, Dialog, Button, Grid } from '@material-ui/core';
+import { DialogActions, DialogContent, DialogTitle, Dialog, Button, Grid } from '@material-ui/core';
 
 import Input from './Input';
 

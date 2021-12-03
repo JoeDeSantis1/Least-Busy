@@ -1,41 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { DialogContent, DialogTitle, Dialog, CircularProgress } from '@material-ui/core';
 
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-    textField: {
-        marginRight: 8,
-        width: 176
-    },
-    button: {
-        justifyContent: 'center'
-    },
-    input: {
-        width: 400
-    }
-}))
-
-
-const AddResDialogForm = (props) => {
-    let placeObj = {};
-    const { onClose, open, addRes } = props;
-
-    const classes = useStyles();
-
-    const acknowledgeComplete = () => {
-        onClose();
-    }
-
-    const handleAddRes = () => {
-        addRes(placeObj);
-    }
-
-    const handleCancel = () => {
-        onClose();
-    }
-
+const LoadingDialog = (props) => {
+    const { onClose, open } = props;
 
     return (
         <div>
@@ -51,4 +20,4 @@ const AddResDialogForm = (props) => {
     );
 }
 
-export default AddResDialogForm;
+export default LoadingDialog;

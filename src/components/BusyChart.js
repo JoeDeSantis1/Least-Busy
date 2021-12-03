@@ -58,7 +58,6 @@ const BusyChart = (props) => {
     
     const whichData = () => {
         if(screenLarge || screenSize >= 500) {
-            console.log(screenSize);
             return <div className={classes.graphDiv}>
                 <ResponsiveContainer>
                     <AreaChart width={700} height={125} data={dataLarge} margin={{ top: 5, right: 10, left: -25, bottom: 0 }}>

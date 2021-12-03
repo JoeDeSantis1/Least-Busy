@@ -3,11 +3,11 @@ import React from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
     div: {
         paddingBottom: '20px'
     },
-}));
+});
 
 
 const SavedAddress = (props) => {

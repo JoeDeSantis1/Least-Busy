@@ -2,7 +2,7 @@ import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
         width: '4000px',
         minWidth: '200px',
@@ -11,18 +11,17 @@ const useStyles = makeStyles({
         objectFit: 'cover',
         padding: '0px',
         margin: '0px',
-        position: 'absolute',
     },
-})
+}))
 
-const ProfileBackground = () => {
+const DashboardBanner = () => {
     const classes = useStyles();
     
     return(
         <div>
-            <img src='DashboardBanner_scaled.jpg' alt='profileBanner' className={classes.root} />
+            <img src='DashboardBanner_scaled.jpg' alt='dashboardBanner' className={classes.root} />
         </div>
     );
 }
 
-export default ProfileBackground;
+export default DashboardBanner;

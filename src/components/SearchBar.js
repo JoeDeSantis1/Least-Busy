@@ -34,7 +34,7 @@ const SearchBar = (props) => {
         setText(input)
     }
 
-    // Disables Enter key
+    // Disables the enter key to prevent the page from refreshing
     const handleEnter = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
