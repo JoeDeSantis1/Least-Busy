@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBar from './NavBar';
+import NavBar from '../auth/NavBar';
 import TopPhoto from './TopPhoto';
 import HowItWorks from './HotItWorks';
 import HomepageFooter from './HomepageFooter';

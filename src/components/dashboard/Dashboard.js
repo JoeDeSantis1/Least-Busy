@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Grid, Paper, Card, CardContent, Divider, Button, CircularProgress } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
-import NavBar from './NavBar';
+import NavBar from '../auth/NavBar';
 import PlaceCard from './PlaceCard';
-import AddressDialogPopover from './AddressDialogPopover';
-import WarningDialogPopover from './WarningDialogPopover';
+import AddressDialogPopover from '../dialogForms/AddressDialogPopover';
+import WarningDialogPopover from '../dialogForms/WarningDialogPopover';
 import DashboardBanner from './DashboardBanner';
-import HomepageFooter from './HomepageFooter';
-import { themeDashboard } from '../styles/theme';
+import HomepageFooter from '../home/HomepageFooter';
+import { themeDashboard } from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
     nav: {

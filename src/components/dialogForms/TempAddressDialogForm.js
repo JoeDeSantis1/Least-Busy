@@ -4,7 +4,7 @@ import { DialogActions, DialogContent, DialogContentText, DialogTitle, Dialog, I
 
 import AutoComplete from 'react-google-autocomplete';
 
-import '../styles.css';
+import '../../styles/styles.css';
 
 
 const AddAddressDialogForm = (props) => {

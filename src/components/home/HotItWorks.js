@@ -4,9 +4,9 @@ import { Typography, Grid, Card, CardActions, Button } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import HowItWorksElement from './HowItWorksElement';
 
-import { themeHome } from '../styles/theme';
+import { themeHome } from '../../styles/theme';
 
-import Auth from './Auth';
+import Auth from '../auth/Auth';
 
 const useStyles = makeStyles((theme) => ({
     signUpMargin: {

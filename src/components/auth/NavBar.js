@@ -6,7 +6,7 @@ import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Avatar, AppBar, Typography, Toolbar, Button, IconButton, Menu, MenuItem } from '@material-ui/core';
 
 import Auth from './Auth';
-import { themeNav } from '../styles/theme';
+import { themeNav } from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
     root: {

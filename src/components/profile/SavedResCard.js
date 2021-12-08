@@ -3,7 +3,7 @@ import { Typography, Card, CardActions, CardContent, CardMedia, Button, Grid, Ic
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import CheckIcon from '@material-ui/icons/Check';
 
-import { themeCards } from '../styles/theme';
+import { themeCards } from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
     root: {

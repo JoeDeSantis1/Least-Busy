@@ -4,17 +4,17 @@ import { Typography, Button, ButtonBase, Divider } from '@material-ui/core';
 import { Grid, Card, CardContent, Avatar, CircularProgress } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
-import NavBar from './NavBar';
-import AddAddressDialogForm from './AddAddressDialogForm';
-import AddResDialogForm from './AddResDialogForm';
-import WarningDialogPopover from './WarningDialogPopover';
+import NavBar from '../auth/NavBar';
+import AddAddressDialogForm from '../dialogForms/AddAddressDialogForm';
+import AddResDialogForm from '../dialogForms/AddResDialogForm';
+import WarningDialogPopover from '../dialogForms/WarningDialogPopover';
 import SavedResCard from './SavedResCard';
 import SavedAddressCard from './SavedAddressCard';
 import SearchBar from './SearchBar';
-import ChangePass from './ChangePass';
+import ChangePass from '../auth/ChangePass';
 import ProfileBackground from './ProfileBackground';
-import HomepageFooter from './HomepageFooter';
-import { themeProfile }  from '../styles/theme';
+import HomepageFooter from '../home/HomepageFooter';
+import { themeProfile }  from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
     nav: {

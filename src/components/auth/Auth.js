@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { Button, Grid, Dialog, DialogTitle, DialogContent } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
-import Input from './Input';
-import LoadingDialog from './LoadingDialog';
-import { themeAuth } from '../styles/theme';
+import Input from '../dialogForms/Input';
+import LoadingDialog from '../dialogForms/LoadingDialog';
+import { themeAuth } from '../../styles/theme';
 
 const useStyles = makeStyles(() => ({
     submit: {

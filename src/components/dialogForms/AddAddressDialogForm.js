@@ -6,7 +6,7 @@ import AutoComplete from 'react-google-autocomplete';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import '../styles.css';
+import '../../styles/styles.css';
 
 
 const useStyles = makeStyles(() => ({
