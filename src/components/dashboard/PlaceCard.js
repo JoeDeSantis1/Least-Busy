@@ -155,7 +155,6 @@ const PlaceCard = (props) => {
     }
 
     const removeDayOfWeek = (hours) => {
-        console.log(hours);
         const dayIndex = hours.indexOf(' ');
 
         const newHours = hours.slice(dayIndex);
