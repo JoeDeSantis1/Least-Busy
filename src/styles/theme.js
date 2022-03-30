@@ -103,6 +103,10 @@ export const themeHome = createMuiTheme({
       fontFamily: 'Poppins',
       fontWeight: 400,
     },
+    h2: {
+      fontFamily: 'Poppins',
+      fontWeight: 400,
+    }
   }
 });
 

@@ -4,18 +4,23 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   root: {
     position: 'absolute',
-    width: '25%',
-    height: '25%',
+    width: '50%',
+    height: '35%',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    borderRadius: '10px',
     backgroundColor: 'white',
   },
   overlayText: {
     textAlign: 'center',
   },
-  textBgColor: {
+  centerText: {
     position: 'absolute',
+    fontFamily: 'Proza Libre',
+    fontSize: '4vw',
+    fontWeight: '600',
+    fontStyle: 'italic',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -28,7 +33,7 @@ const OverlayText = () => {
   return (
     <div className={classes.root}>
         <div className={classes.overlayText}>
-            <span className={classes.textBgColor}>Least Busy</span>
+            <span className={classes.centerText}>Least Busy</span>
         </div>
     </div>
   );

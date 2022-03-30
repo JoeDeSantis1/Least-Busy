@@ -65,11 +65,6 @@ const HowItWorks = () => {
 
     return(
         <ThemeProvider theme={themeHome}>
-            <Grid item>
-                <Typography align='center' variant='h1' className={classes.title}>
-                    Least Busy
-                </Typography>
-            </Grid>
             <div className={classes.divMargin}>
                 <Grid item>
                     <Grid container style={{justifyContent: 'center'}}>
