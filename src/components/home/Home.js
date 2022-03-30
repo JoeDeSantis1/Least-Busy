@@ -11,9 +11,7 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <Grid container>
-        <TopPhoto />
-      </Grid>
+      <TopPhoto />
       <Grid container style={{justifyContent: 'center'}}>
         <HowItWorks />
       </Grid>

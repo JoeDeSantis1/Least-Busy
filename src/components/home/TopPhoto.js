@@ -1,10 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid} from '@material-ui/core';
+import OverlayText from './OverlayText';
 
 const useStyles = makeStyles({
   root: {
-    width: '4000px',
+    position: 'relative',
+    textAlign: 'center',
+  },
+  overlayText: {
+    position: 'absolute',
+  },
+  divMargin: {
+    marginTop: '64px',
+    width: '2000px',
     minWidth: '200px',
     maxWidth: '100%',
     maxHeight: '250px',
@@ -13,39 +21,29 @@ const useStyles = makeStyles({
     margin: '0px',
     paddingBottom: 0
   },
-  divMargin: {
-    marginTop: '64px',
-  },
 });
 
 const TopPhoto = () => {
-  const randomNum = Math.floor(Math.random() * 4) + 1;
+  const randomNum = Math.floor(Math.random() * 4);
   const classes = useStyles();
 
   return (
-        <div className={classes.divMargin}>
-          <Grid item>
-              {randomNum === 1 && 
-                <div>
-                  <img src='Restaurant1_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }
-              {randomNum === 2 && 
-                <div>
-                  <img src='Restaurant2_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }
-              {randomNum === 3 && 
-                <div>
-                  <img src='Restaurant3_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }
-              {randomNum === 4 && 
-                <div>
-                  <img src='Restaurant4_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }  
-          </Grid>
+        <div className={classes.root}>
+          <OverlayText />
+          <div>
+            {randomNum === 0 && 
+                <img src='Restaurant1_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
+            }
+            {randomNum === 1 && 
+                <img src='Restaurant2_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
+            }
+            {randomNum === 2 && 
+                <img src='Restaurant3_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
+            }
+            {randomNum === 3 && 
+                <img src='Restaurant4_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
+            }
+          </div>  
         </div>
   );
 }
