@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   howItWorks: {
     display: 'flex',
-    flexFlow: 'column wrap',
+    flexFlow: 'column nowrap',
     alignItems: 'stretch',
   },
   footer: {

@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     transform: 'translate(-50%, -50%)',
     borderRadius: '10px',
     backgroundColor: 'white',
+    opacity: '85%',
     zIndex: 100, 
   },
   overlayText: {

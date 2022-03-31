@@ -74,6 +74,7 @@ const HowItWorks = () => {
                     how busy restaurants are right now or...'
                 right
                 offset='15%'
+                fadeTime={6500}
             />
             <HowItWorksElement2 
                 title='Least Busy shows how busy a restaurant will be when you get there from any address'
@@ -84,6 +85,7 @@ const HowItWorks = () => {
                 left
                 offset='15%'
                 reverse 
+                fadeTime={7000}
             />
             <HowItWorksElement2 
                 title='Add your favorite restaurants to your profile'
@@ -94,6 +96,7 @@ const HowItWorks = () => {
                     addresses as you'd like, then head to the Dashboard." 
                 right
                 offset='15%'
+                fadeTime={7500}
             />
             <HowItWorksElement2 
                 title='Use the Dashboard to see which restaurants are the Least Busy'
@@ -104,6 +107,7 @@ const HowItWorks = () => {
                 left
                 offset='15%'
                 reverse
+                fadeTime={8000}
             />
                     {/* <Grid container style={{justifyContent: 'center'}}>
                         <HowItWorksElement 

@@ -1,5 +1,8 @@
 import React from 'react';
+
+import { Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+
 import OverlayText from './OverlayText';
 import Slider from 'react-slick';
 
@@ -41,6 +44,11 @@ const TopPhoto = () => {
   };
   
   return (
+    <Fade 
+            in
+
+            {...(true ? { timeout: 5000 } : {})}
+    >
     <div className={classes.root}>
       <OverlayText />
       <div>
@@ -60,6 +68,7 @@ const TopPhoto = () => {
       </Slider>
       </div>
     </div>
+    </Fade>
         // <div className={classes.root}>
         //   <OverlayText />
         //   <div>
