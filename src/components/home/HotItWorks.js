@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import { Typography, Grid, Card, CardActions, Button } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import HowItWorksElement from './HowItWorksElement';
 
 import { themeHome } from '../../styles/theme';
 
 import Auth from '../auth/Auth';
+import HowItWorksElement from './HowItWorksElement';
+import HowItWorksElement2 from './HowItWorksElement2';
 
 const useStyles = makeStyles((theme) => ({
     signUpMargin: {
@@ -64,10 +65,47 @@ const HowItWorks = () => {
     };
 
     return(
-        <ThemeProvider theme={themeHome}>
-            <div className={classes.divMargin}>
-                <Grid item>
-                    <Grid container style={{justifyContent: 'center'}}>
+        <>
+            <HowItWorksElement2 
+                title='Quickly see which of your favorite restaurants is the Least Busy'
+                image='HIWelement1.jpg'
+                alt='WomenLaughing'
+                desc='Least Busy orangizes a list of your favorite restaurants from least busy to most busy. You can quickly see 
+                    how busy restaurants are right now or...'
+                right
+                offset='15%'
+            />
+            <HowItWorksElement2 
+                title='Least Busy shows how busy a restaurant will be when you get there from any address'
+                image='HIWelement2.jpeg'
+                alt='roadSigns'
+                desc="Using the 'When I Get There' feature, the list will be reorganized to show how busy the restaurants will be
+                    when you arrive from a specified address." 
+                left
+                offset='15%'
+                reverse 
+            />
+            <HowItWorksElement2 
+                title='Add your favorite restaurants to your profile'
+                image='ProfileScreen2.PNG'
+                alt='profileScreen'
+                desc="You can add your favorite restaurants to your profile using a Google Maps widget. You can also add
+                    addresses like 'Home' or 'Work' to make the 'When I Get There' feature easier to use. Add as many restaurants and 
+                    addresses as you'd like, then head to the Dashboard." 
+                right
+                offset='15%'
+            />
+            <HowItWorksElement2 
+                title='Use the Dashboard to see which restaurants are the Least Busy'
+                image='DashboardScreen.PNG'
+                alt='dashboard'
+                desc="The Dashboard will show you an organized list of restaurants from least busy to most busy. Click on the 'When I Get There'
+                    button to reorganize the list to show how busy the restaurants will be from a custom address or a saved address."
+                left
+                offset='15%'
+                reverse
+            />
+                    {/* <Grid container style={{justifyContent: 'center'}}>
                         <HowItWorksElement 
                             title='Quickly see which of your favorite restaurants is the Least Busy'
                             image='HIWelement1.jpg'
@@ -101,9 +139,8 @@ const HowItWorks = () => {
                                 button to reorganize the list to show how busy the restaurants will be from a custom address or a saved address."
                             bgColor='#bba7fa' 
                         />
-                    </Grid>
-                </Grid>
-                <div className={classes.signUpMargin}>
+                    </Grid> */}
+                {/* <div className={classes.signUpMargin}>
                 <Grid container style={{justifyContent: 'center'}}>
                     <Grid item>
                     <Card elevation={12} className={classes.card}>
@@ -118,10 +155,9 @@ const HowItWorks = () => {
                     </Card>
                     </Grid> 
                 </Grid>
-                </div>
-            </div>
+                </div> */}
             <Auth open={openAuth} onClose={handleAuthClose}/>
-        </ThemeProvider>
+        </>
     );
 }
 

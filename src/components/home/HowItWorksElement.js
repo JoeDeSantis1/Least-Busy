@@ -43,7 +43,12 @@ const HowItWorksElement = (props) => {
 
     return(
         <Grid item className={classes.gridPadding}>
-            <Card className={classes.root} elevation={12} align='center' style={{backgroundColor: `${bgColor}`}}>
+            <div>
+                <h3>{title}</h3>
+                <img src={image} alt={alt} />
+                <p>{desc}</p>
+            </div>
+            {/* <Card className={classes.root} elevation={12} align='center' style={{backgroundColor: `${bgColor}`}}>
                 <CardHeader
                     title={title}
                 />
@@ -57,7 +62,7 @@ const HowItWorksElement = (props) => {
                         {desc}
                     </Typography>
                 </CardContent>
-            </Card>
+            </Card> */}
         </Grid>  
     )
 }
