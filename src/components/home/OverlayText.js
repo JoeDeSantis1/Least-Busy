@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     position: 'absolute',
     width: '43%',
     height: '35%',
-    top: '50%',
+    top: '35%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     borderRadius: '10px',
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   centerText: {
     position: 'absolute',
-    fontFamily: 'Proza Libre',
+    fontFamily: 'Roboto',
     fontSize: '4vw',
     fontWeight: '600',
     fontStyle: 'italic',
