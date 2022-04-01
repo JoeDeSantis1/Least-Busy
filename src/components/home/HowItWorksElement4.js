@@ -15,12 +15,11 @@ const HowItWorksElement2 = (props) => {
 
     const useStyles = makeStyles((theme) => ({
         root: {
-            width: '80%',
-            margin: '20px 10px 40px 0px',
-            borderStyle: 'solid',
-            borderWidth: '1px',
-            borderRadius: '5px',
-            borderColor: 'rgba(0,0,0,0)',
+            width: '70%',
+            margin: '0px 10px 25px 0px',
+            borderBottom: '1px solid',
+            borderLeft: '1px dashed',
+            borderRight: '1px dashed',
             // marginLeft: leftOffset,
             // marginRight: rightOffset,
             alignSelf: 'center',
@@ -29,6 +28,7 @@ const HowItWorksElement2 = (props) => {
             display: 'flex',
             justifyContent: 'center',
             flexDirection: flexDirection,
+            margin: '15px',
             gap: '20px'
         },
         img: {
@@ -61,7 +61,7 @@ const HowItWorksElement2 = (props) => {
             <div className={classes.root}>
                 <div className={classes.elementFlex}>
                     <img src={image} alt={alt} className={classes.img}/>
-                    <div className={classes.text}>
+                    <div className={classes.text}>                       
                         <p className={classes.p}>{desc}</p>
                     </div>
                 </div>

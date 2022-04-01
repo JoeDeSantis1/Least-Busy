@@ -4,29 +4,37 @@ import { Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
+
+
 const HowItWorksElement3 = (props) => {
     const { title, image, alt } = props;
 
     const useStyles = makeStyles((theme) => ({
         root: {
-            width: '55%',
-            margin: '0px 20px 10px 10px',
-            borderStyle: 'solid',
-            borderWidth: '1px',
-            borderRadius: '5px',
-            borderColor: 'rgba(0,0,0,0)',
+            width: '80%',
+            margin: '0px 20px 30px 10px',
             // marginLeft: leftOffset,
             // marginRight: rightOffset,
             alignSelf: 'center',
         },
         elementFlex: {
             display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             // flexDirection: flexDirection,
             gap: '20px'
         },
         imgFlex: {
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+        },
+        imgFlex2: {
+            display: 'flex',
+            flexDirection: 'column',
+            [theme.breakpoints.down('md')]: {
+                flex: '0 0 100%',
+                order: 3
+            },
         },
         img: {
             width: '250px',

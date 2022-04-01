@@ -4,15 +4,18 @@ import { Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-const ElementHeader = (props) => {
+const ElementHeader2 = (props) => {
     const { title, image, alt, desc } = props;
 
 
     const useStyles = makeStyles((theme) => ({
         root: {
-            width: '80%',
+            width: '70%',
             margin: '50px 10px 0px 0px',
             alignSelf: 'center',
+            borderTop: '1px solid',
+            borderLeft: '1px dashed',
+            borderRight: '1px dashed',
         },
         elementFlex: {
             display: 'flex',
@@ -51,4 +54,4 @@ const ElementHeader = (props) => {
     );
 }
 
-export default ElementHeader;
+export default ElementHeader2;

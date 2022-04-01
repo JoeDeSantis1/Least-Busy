@@ -5,8 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Auth from '../auth/Auth';
 import HowItWorksElement from './HowItWorksElement';
 import ElementHeader from './ElementHeader';
+import ElementHeader2 from './ElementHeader2';
 import HowItWorksElement2 from './HowItWorksElement2';
 import HowItWorksElement3 from './HowItWorksElement3';
+import HowItWorksElement4 from './HowItWorksElement4';
 
 const useStyles = makeStyles((theme) => ({
     signUpMargin: {
@@ -46,8 +48,14 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             fontSize: '60px',
         },
-
     },
+    hr: {
+        width: '70%',
+        margin: '40px 0px 10px 0px',
+        height: '1px',
+        borderTop: '1px solid',
+        alignSelf: 'center'
+    }
 }));
 
 const HowItWorks = () => {
@@ -77,6 +85,7 @@ const HowItWorks = () => {
                 offset='15%'
                 fadeTime={6500}
             />
+            <hr className={classes.hr} />
             <ElementHeader 
                 title='See how busy a restaurant will be when you get there from any address'
             />
@@ -88,10 +97,10 @@ const HowItWorks = () => {
                 left
                 fadeTime={7000}
             />
-            <ElementHeader 
+            <ElementHeader2 
                 title='Add your favorite restaurants to your profile'
             />
-            <HowItWorksElement2 
+            <HowItWorksElement4 
                 image='ProfileScreen2.PNG'
                 alt='profileScreen'
                 desc="You can add your favorite restaurants to your profile using a Google Maps widget. You can also add
