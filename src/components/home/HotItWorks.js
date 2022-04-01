@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
-import { Typography, Grid, Card, CardActions, Button } from '@material-ui/core';
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-
-import { themeHome } from '../../styles/theme';
+import { makeStyles } from '@material-ui/core/styles';
 
 import Auth from '../auth/Auth';
 import HowItWorksElement from './HowItWorksElement';

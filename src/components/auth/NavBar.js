@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import decode from 'jwt-decode'; 
 
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { Avatar, AppBar, Typography, Toolbar, Button, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { Avatar, IconButton, Menu, MenuItem } from '@material-ui/core';
 
 import Auth from './Auth';
-import { themeNav } from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
     root: {
