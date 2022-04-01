@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     position: 'absolute',
   },
   divMargin: {
-    marginTop: '64px',
     width: '2000px',
     minWidth: '200px',
     maxWidth: '100%',

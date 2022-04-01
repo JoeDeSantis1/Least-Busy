@@ -10,7 +10,7 @@ const HowItWorksElement3 = (props) => {
     const useStyles = makeStyles((theme) => ({
         root: {
             width: '55%',
-            margin: '0px 10px 10px 0px',
+            margin: '0px 20px 10px 10px',
             borderStyle: 'solid',
             borderWidth: '1px',
             borderRadius: '5px',
