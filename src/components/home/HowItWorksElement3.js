@@ -4,14 +4,8 @@ import { Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-const HowItWorksElement2 = (props) => {
-    const { title, image, alt, desc, reverse, left, right, offset, fadeTime } = props;
-
-    const flexDirection = reverse ? 'row-reverse' : 'row';
-    const leftOffset = left ? offset : '0px';
-    const rightOffset = right ? offset : '0px';
-    const leftTextMargin = left ? '10px' : '0px';
-    const rightTextMargin = right ? '10px' : '0px';
+const HowItWorksElement3 = (props) => {
+    const { title, image, alt } = props;
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -27,8 +21,12 @@ const HowItWorksElement2 = (props) => {
         },
         elementFlex: {
             display: 'flex',
-            flexDirection: flexDirection,
+            // flexDirection: flexDirection,
             gap: '20px'
+        },
+        imgFlex: {
+            display: 'flex',
+            flexDirection: 'column'
         },
         img: {
             width: '250px',
@@ -37,8 +35,8 @@ const HowItWorksElement2 = (props) => {
         },
         text: {
             fontFamily: 'Roboto',
-            marginLeft: leftTextMargin,
-            marginRight: rightTextMargin
+            // marginLeft: leftTextMargin,
+            // marginRight: rightTextMargin
         },
         list: {
             listStyleType: 'none',
@@ -57,18 +55,21 @@ const HowItWorksElement2 = (props) => {
     return(
         <Fade 
             in
-            {...(true ? { timeout: fadeTime } : {})}
+            {...(true ? { timeout: 1000 } : {})}
         >
             <div className={classes.root}>
                 <div className={classes.elementFlex}>
-                    <img src={image} alt={alt} className={classes.img}/>
-                    <div className={classes.text}>
-                        <ul className={classes.list}>
-                            <li className={classes.listItems}>Least Busy orangizes a list of your favorite restaurants from least to most busy.</li>
-                            
-                            <li className={classes.listItems}>You can quickly see how busy restaurants are right now or...</li>
-                        </ul>                        
-                        {/* <p>{desc}</p> */}
+                    <div className={classes.imgFlex}>
+                        <img src={image} alt={alt} className={classes.img}/>
+                        <p>Something</p>
+                    </div>
+                    <div className={classes.imgFlex}>
+                        <img src={image} alt={alt} className={classes.img}/>
+                        <p>Something</p>
+                    </div>
+                    <div className={classes.imgFlex}>
+                        <img src={image} alt={alt} className={classes.img}/>
+                        <p>Something</p>
                     </div>
                 </div>
             </div> 
@@ -76,4 +77,4 @@ const HowItWorksElement2 = (props) => {
     );
 }
 
-export default HowItWorksElement2;
+export default HowItWorksElement3;

@@ -5,7 +5,8 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
     background: {
-        backgroundColor: '#6a82d4',
+        backgroundColor: '#0a438b',
+        fontFamily: 'Roboto',
         width: '100%',
         marginTop: '55px',
     },
@@ -13,7 +14,7 @@ const useStyles = makeStyles({
         paddingTop: '10px',
     },
     textWeight: {
-        fontWeight: 300,
+        color: 'white',
     },
 })
 
@@ -24,7 +25,7 @@ const HomepageFooter = (props) => {
     return(
         <div className={classes.background} style={{height: height}}>
             <div className={classes.textPadding}>
-                <Typography className={classes.textWeight} align='center' >
+                <Typography className={classes.textWeight} align='center'>
                     Created By: Joe DeSantis
                 </Typography>
             </div>

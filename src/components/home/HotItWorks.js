@@ -7,7 +7,9 @@ import { themeHome } from '../../styles/theme';
 
 import Auth from '../auth/Auth';
 import HowItWorksElement from './HowItWorksElement';
+import ElementHeader from './ElementHeader';
 import HowItWorksElement2 from './HowItWorksElement2';
+import HowItWorksElement3 from './HowItWorksElement3';
 
 const useStyles = makeStyles((theme) => ({
     signUpMargin: {
@@ -66,8 +68,10 @@ const HowItWorks = () => {
 
     return(
         <>
+            <ElementHeader 
+                title='The easy way to see which of your favorite restaurants is the Least Busy'
+            />
             <HowItWorksElement2 
-                title='Quickly see which of your favorite restaurants is the Least Busy'
                 image='HIWelement1.jpg'
                 alt='WomenLaughing'
                 desc='Least Busy orangizes a list of your favorite restaurants from least busy to most busy. You can quickly see 
@@ -76,37 +80,39 @@ const HowItWorks = () => {
                 offset='15%'
                 fadeTime={6500}
             />
-            <HowItWorksElement2 
-                title='Least Busy shows how busy a restaurant will be when you get there from any address'
+            <ElementHeader 
+                title='See how busy a restaurant will be when you get there from any address'
+            />
+            <HowItWorksElement3 
                 image='HIWelement2.jpeg'
                 alt='roadSigns'
                 desc="Using the 'When I Get There' feature, the list will be reorganized to show how busy the restaurants will be
                     when you arrive from a specified address." 
                 left
-                offset='15%'
-                reverse 
                 fadeTime={7000}
             />
-            <HowItWorksElement2 
+            <ElementHeader 
                 title='Add your favorite restaurants to your profile'
+            />
+            <HowItWorksElement2 
                 image='ProfileScreen2.PNG'
                 alt='profileScreen'
                 desc="You can add your favorite restaurants to your profile using a Google Maps widget. You can also add
                     addresses like 'Home' or 'Work' to make the 'When I Get There' feature easier to use. Add as many restaurants and 
                     addresses as you'd like, then head to the Dashboard." 
-                right
-                offset='15%'
+                reverse
                 fadeTime={7500}
             />
-            <HowItWorksElement2 
+            <ElementHeader 
                 title='Use the Dashboard to see which restaurants are the Least Busy'
+            />
+            <HowItWorksElement2 
                 image='DashboardScreen.PNG'
                 alt='dashboard'
                 desc="The Dashboard will show you an organized list of restaurants from least busy to most busy. Click on the 'When I Get There'
                     button to reorganize the list to show how busy the restaurants will be from a custom address or a saved address."
                 left
                 offset='15%'
-                reverse
                 fadeTime={8000}
             />
                     {/* <Grid container style={{justifyContent: 'center'}}>
