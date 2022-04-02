@@ -22,23 +22,16 @@ const HowItWorksElement3 = (props) => {
             flexWrap: 'wrap',
             justifyContent: 'center',
             // flexDirection: flexDirection,
-            gap: '20px'
+            gap: '60px'
         },
         imgFlex: {
             display: 'flex',
             flexDirection: 'column',
-        },
-        imgFlex2: {
-            display: 'flex',
-            flexDirection: 'column',
-            [theme.breakpoints.down('md')]: {
-                flex: '0 0 100%',
-                order: 3
-            },
+            alignItems: 'center'
         },
         img: {
             width: '250px',
-            maxHeight: '300px',
+            maxHeight: '166px',
             borderRadius: '3px'
         },
         text: {
@@ -61,27 +54,22 @@ const HowItWorksElement3 = (props) => {
     const classes = useStyles();
 
     return(
-        <Fade 
-            in
-            {...(true ? { timeout: 1000 } : {})}
-        >
-            <div className={classes.root}>
-                <div className={classes.elementFlex}>
-                    <div className={classes.imgFlex}>
-                        <img src={image} alt={alt} className={classes.img}/>
-                        <p>Something</p>
-                    </div>
-                    <div className={classes.imgFlex}>
-                        <img src={image} alt={alt} className={classes.img}/>
-                        <p>Something</p>
-                    </div>
-                    <div className={classes.imgFlex}>
-                        <img src={image} alt={alt} className={classes.img}/>
-                        <p>Something</p>
-                    </div>
+        <div className={classes.root}>
+            <div className={classes.elementFlex}>
+                <div className={classes.imgFlex}>
+                    <img src={image} alt={alt} className={classes.img}/>
+                    <p>No matter where you are</p>
                 </div>
-            </div> 
-        </Fade> 
+                <div className={classes.imgFlex}>
+                    <img src='eating_outside.jpg' alt={alt} className={classes.img}/>
+                    <p>You'll see busyness</p>
+                </div>
+                <div className={classes.imgFlex}>
+                    <img src='phone_in_car.jpg' alt={alt} className={classes.img}/>
+                    <p>For when you'll arrive.</p>
+                </div>
+            </div>
+        </div>  
     );
 }
 

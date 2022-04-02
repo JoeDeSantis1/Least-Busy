@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
 const ElementHeader2 = (props) => {
-    const { title, image, alt, desc } = props;
+    const { title } = props;
 
 
     const useStyles = makeStyles((theme) => ({
@@ -20,7 +19,6 @@ const ElementHeader2 = (props) => {
         elementFlex: {
             display: 'flex',
             justifyContent: 'center',
-            // flexDirection: flexDirection,
             gap: '20px'
         },
         img: {
@@ -30,8 +28,6 @@ const ElementHeader2 = (props) => {
         },
         text: {
             fontFamily: 'Roboto',
-            // marginLeft: leftTextMargin,
-            // marginRight: rightTextMargin
         }
     }));
     
@@ -39,18 +35,13 @@ const ElementHeader2 = (props) => {
     const classes = useStyles();
 
     return(
-        <Fade 
-            in
-            {...(true ? { timeout: 1000 } : {})}
-        >
-            <div className={classes.root}>
-                <div className={classes.elementFlex}>
-                    <div className={classes.text}>
-                        <h2>{title}</h2>
-                    </div>
+        <div className={classes.root}>
+            <div className={classes.elementFlex}>
+                <div className={classes.text}>
+                    <h2>{title}</h2>
                 </div>
-            </div> 
-        </Fade> 
+            </div>
+        </div> 
     );
 }
 
