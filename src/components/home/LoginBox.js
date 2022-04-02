@@ -58,8 +58,6 @@ const useStyles = makeStyles((theme) => ({
             top: 0,
             right: '-20px',
             transition: '0.5s',
-            opacity: 1,
-            right: 0,
         },
     }
 }));

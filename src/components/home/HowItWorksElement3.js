@@ -1,27 +1,21 @@
 import React from 'react';
 
-import { Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-
-
 const HowItWorksElement3 = (props) => {
-    const { title, image, alt } = props;
+    const { image, alt } = props;
 
     const useStyles = makeStyles((theme) => ({
         root: {
             width: '80%',
             margin: '0px 20px 30px 10px',
-            // marginLeft: leftOffset,
-            // marginRight: rightOffset,
             alignSelf: 'center',
         },
         elementFlex: {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            // flexDirection: flexDirection,
             gap: '60px'
         },
         imgFlex: {
@@ -36,8 +30,6 @@ const HowItWorksElement3 = (props) => {
         },
         text: {
             fontFamily: 'Roboto',
-            // marginLeft: leftTextMargin,
-            // marginRight: rightTextMargin
         },
         list: {
             listStyleType: 'none',
