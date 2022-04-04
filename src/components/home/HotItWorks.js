@@ -52,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
     hr: {
         width: '70%',
         margin: '10px 0px 10px 0px',
-        height: '1px',
         borderTop: '1px solid',
         alignSelf: 'center'
     }
