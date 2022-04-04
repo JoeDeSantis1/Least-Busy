@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     position: 'absolute',
     width: '43%',
@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     backgroundColor: 'white',
     opacity: '85%',
     zIndex: 100, 
+    [theme.breakpoints.down('xs')]: {
+      width: '55%',
+    },
   },
   overlayText: {
     textAlign: 'center',
@@ -26,8 +29,11 @@ const useStyles = makeStyles({
     top: '45%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '5vw',
+    },
   }
-});
+}));
 
 const OverlayText = () => {
   const classes = useStyles();
