@@ -5,7 +5,7 @@ const useStyles = makeStyles({
   root: {
     position: 'absolute',
     width: '43%',
-    height: '35%',
+    height: '40%',
     top: '35%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     fontSize: '4vw',
     fontWeight: '600',
     fontStyle: 'italic',
-    top: '50%',
+    top: '45%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
   }

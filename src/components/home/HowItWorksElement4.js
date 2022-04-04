@@ -25,17 +25,23 @@ const HowItWorksElement2 = (props) => {
             flexDirection: flexDirection,
             margin: '15px',
             marginBottom: '40px',
-            gap: '20px'
+            gap: '20px',
+            [theme.breakpoints.down('xs')]: {
+                flexWrap: 'wrap',
+            },
         },
         img: {
             width: '250px',
             maxHeight: '180px',
-            borderRadius: '3px'
+            borderRadius: '3px',
         },
         text: {
             fontFamily: 'Roboto',
             marginLeft: leftTextMargin,
-            marginRight: rightTextMargin
+            marginRight: rightTextMargin,
+            [theme.breakpoints.down('xs')]: {
+                textAlign: 'center',
+            },
         },
         p: {
             margin: '0px',

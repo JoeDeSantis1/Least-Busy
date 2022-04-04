@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createTheme } from '@material-ui/core/styles';
 
 
 const HowItWorksElement2 = (props) => {
@@ -19,12 +19,18 @@ const HowItWorksElement2 = (props) => {
             borderRadius: '5px',
             borderColor: 'rgba(0,0,0,0)',
             alignSelf: 'center',
+            [theme.breakpoints.down('xs')]: {
+                margin: '0px 10px 40px 0px',
+            },
         },
         elementFlex: {
             display: 'flex',
             justifyContent: 'center',
             flexDirection: flexDirection,
-            gap: '20px'
+            gap: '20px',
+            [theme.breakpoints.down('xs')]: {
+                flexWrap: 'wrap',
+            },
         },
         img: {
             width: '250px',
@@ -32,12 +38,15 @@ const HowItWorksElement2 = (props) => {
             borderWidth: '1px',
             borderRadius: '3px',
             borderColor: 'rgba(0,0,0,0.2)',
-            maxHeight: 'px',
+            maxHeight: '178px',
         },
         text: {
             fontFamily: 'Roboto',
             marginLeft: leftTextMargin,
-            marginRight: rightTextMargin
+            marginRight: rightTextMargin,
+            [theme.breakpoints.down('xs')]: {
+                textAlign: 'center',
+            },
         },
         p: {
             margin: '0px',

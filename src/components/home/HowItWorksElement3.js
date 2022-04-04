@@ -16,11 +16,15 @@ const HowItWorksElement3 = (props) => {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            gap: '60px'
+            gap: '60px',
+            [theme.breakpoints.down('xs')]: {
+                gap: '25px',
+            },
         },
         imgFlex: {
             display: 'flex',
             flexDirection: 'column',
+            fontFamily: 'Roboto',
             alignItems: 'center'
         },
         img: {

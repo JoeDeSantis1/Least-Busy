@@ -25,6 +25,9 @@ const ElementHeader = (props) => {
         },
         text: {
             fontFamily: 'Roboto',
+            [theme.breakpoints.down('xs')]: {
+                textAlign: 'center',
+            },
         }
     }));
     
