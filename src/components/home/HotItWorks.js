@@ -73,20 +73,20 @@ const HowItWorks = () => {
     return(
         <>
             <ElementHeader 
-                title='The easy way to see which of your favorite restaurants is the Least Busy'
+                title='The easy way to see which of your favorite restaurants is the Least Busy right now'
             />
             <HowItWorksElement2 
                 image='HIWelement1.jpg'
                 alt='WomenLaughing'
                 desc='Least Busy orangizes a list of your favorite restaurants from least busy to most busy. You can quickly see 
-                    how busy restaurants are right now or...'
+                    how busy restaurants are right now...'
                 right
                 offset='15%'
                 fadeTime={6500}
             />
             <hr className={classes.hr} />
             <ElementHeader 
-                title='See how busy a restaurant will be when you get there from any address'
+                title='Or see how busy a restaurant will be when you get there from any address'
             />
             <HowItWorksElement3 
                 image='HIWelement2.jpeg'
