@@ -103,6 +103,10 @@ export const themeHome = createMuiTheme({
       fontFamily: 'Poppins',
       fontWeight: 400,
     },
+    h2: {
+      fontFamily: 'Poppins',
+      fontWeight: 400,
+    }
   }
 });
 
@@ -137,7 +141,7 @@ export const themeAuth = createMuiTheme({
       main: '#0e2d96',
     },
     secondary: {
-      main: '#4B3F72',
+      main: '#0a438b',
     },
   },
   typography: {

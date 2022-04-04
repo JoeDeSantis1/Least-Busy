@@ -2,18 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import decode from 'jwt-decode'; 
 
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { Avatar, AppBar, Typography, Toolbar, Button, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { Avatar, IconButton, Menu, MenuItem } from '@material-ui/core';
 
 import Auth from './Auth';
-import { themeNav } from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      display: 'flex',
+      alignContent: 'space-between',
+      width: '100%',
+      backgroundColor: '#0a438b',
+      fontFamily: 'Roboto'
     },
     title: {
       flexGrow: 1,
+    },
+    text: {
+      color: 'white',
+      marginLeft: '20px',
+    },
+    textLink: {
+      color: 'white',
+      marginRight: '20px',
+      cursor: 'pointer'
     },
     rightIcons: {
       display: 'flex',
@@ -78,37 +90,33 @@ const NavBar = (props) => {
     };
 
     return (
-      <ThemeProvider theme={themeNav}>
-        <div className={classes.root}>
-            <AppBar position='absolute' color="primary" elevation={0}>
-                <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
-                        Least Busy
-                    </Typography>
-                    {isSignedIn ?
-                      <div className={classes.rightIcons}> 
-                        <IconButton aria-controls='avatar-button' aria-haspopup={true} onClick={handlePopoverClick} size='small'>
-                          <Avatar alt={user.result.name} src='/millie.jpg'></Avatar>
-                        </IconButton>
-                        <Menu
-                          id="simple-menu"
-                          anchorEl={anchorEl}
-                          keepMounted
-                          open={Boolean(anchorEl)}
-                          onClose={handlePopoverClose}
-                        >
-                          <MenuItem component={Link} to={'/dashboard'}>Dashboard</MenuItem>
-                          <MenuItem component={Link} to={'/profile'}>My Profile</MenuItem>
-                          <MenuItem onClick={logout}>Logout</MenuItem>
-                        </Menu>
-                      </div> :
-                      <Button onClick={handleAuthOpen} variant='contained' color='secondary'>Login/Sign Up</Button>
-                    }
-                    <Auth open={openAuth} onClose={handleAuthClose}/>
-                </Toolbar>
-            </AppBar>
-        </div>
-      </ThemeProvider>
+      <div className={classes.root}>
+          <div className={classes.title}>
+              <h4 className={classes.text}>Least Busy</h4>
+          </div>
+          {isSignedIn ?
+            <div className={classes.rightIcons}> 
+              <IconButton aria-controls='avatar-button' aria-haspopup={true} onClick={handlePopoverClick} size='small'>
+                <Avatar alt={user.result.name} src='/millie.jpg'></Avatar>
+              </IconButton>
+              <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handlePopoverClose}
+              >
+                <MenuItem component={Link} to={'/dashboard'}>Dashboard</MenuItem>
+                <MenuItem component={Link} to={'/profile'}>My Profile</MenuItem>
+                <MenuItem onClick={logout}>Logout</MenuItem>
+              </Menu>
+            </div> :
+            <div>
+              <h4 onClick={handleAuthOpen} className={classes.textLink}>Login/Sign Up</h4>
+            </div>
+          }
+                  <Auth open={openAuth} onClose={handleAuthClose}/>
+      </div>
     )
 }
 

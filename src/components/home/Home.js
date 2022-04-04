@@ -7,20 +7,33 @@ import HomepageFooter from './HomepageFooter';
 
 import { Grid } from '@material-ui/core';
 
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  howItWorks: {
+    display: 'flex',
+    flexFlow: 'column nowrap',
+    alignItems: 'stretch',
+  },
+  footer: {
+    position: 'fixed',
+  }
+}));
+
 const Home = () => {
+  const classes = useStyles();
+
   return (
-    <div>
+    <>
       <NavBar />
-      <Grid container>
-        <TopPhoto />
-      </Grid>
-      <Grid container style={{justifyContent: 'center'}}>
+      <TopPhoto />
+      <div className={classes.howItWorks}>
         <HowItWorks />
-      </Grid>
-      <Grid container>
-          <HomepageFooter height='80px'/>
-      </Grid>
-    </div>
+      </div>
+      <div>
+        <HomepageFooter height='50px'/>
+      </div>
+    </>
   );
 }
 

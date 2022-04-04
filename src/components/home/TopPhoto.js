@@ -1,10 +1,20 @@
 import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid} from '@material-ui/core';
+
+import OverlayText from './OverlayText';
+import Slider from 'react-slick';
 
 const useStyles = makeStyles({
   root: {
-    width: '4000px',
+    position: 'relative',
+    textAlign: 'center',
+  },
+  overlayText: {
+    position: 'absolute',
+  },
+  divMargin: {
+    width: '2000px',
     minWidth: '200px',
     maxWidth: '100%',
     maxHeight: '250px',
@@ -13,40 +23,43 @@ const useStyles = makeStyles({
     margin: '0px',
     paddingBottom: 0
   },
-  divMargin: {
-    marginTop: '64px',
-  },
 });
 
 const TopPhoto = () => {
-  const randomNum = Math.floor(Math.random() * 4) + 1;
   const classes = useStyles();
 
+  const settings = {
+    dots: false,
+    arrows: false,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+  
   return (
-        <div className={classes.divMargin}>
-          <Grid item>
-              {randomNum === 1 && 
-                <div>
-                  <img src='Restaurant1_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }
-              {randomNum === 2 && 
-                <div>
-                  <img src='Restaurant2_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }
-              {randomNum === 3 && 
-                <div>
-                  <img src='Restaurant3_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }
-              {randomNum === 4 && 
-                <div>
-                  <img src='Restaurant4_scaled.jpg' alt='Restaurant1' className={classes.root}/>
-                </div>
-              }  
-          </Grid>
+    <div className={classes.root}>
+      <OverlayText />
+      <div>
+      <Slider {...settings}>
+        <div>
+          <img src='Restaurant1_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
         </div>
+        <div>
+          <img src='Restaurant2_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
+        </div>
+        <div>
+          <img src='Restaurant3_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
+        </div>
+        <div>
+          <img src='Restaurant4_scaled.png' alt='Restaurant1' className={classes.divMargin}/>
+        </div>
+      </Slider>
+      </div>
+    </div>
   );
 }
 
