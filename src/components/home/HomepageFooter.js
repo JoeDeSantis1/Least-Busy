@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
@@ -12,9 +11,12 @@ const useStyles = makeStyles({
     },
     textPadding: {
         paddingTop: '10px',
+        textAlign: 'center',
     },
-    textWeight: {
+    text: {
         color: 'white',
+        fontFamily: 'Roboto',
+        opacity: '75%',
     },
 })
 
@@ -25,9 +27,7 @@ const HomepageFooter = (props) => {
     return(
         <div className={classes.background} style={{height: height}}>
             <div className={classes.textPadding}>
-                <Typography className={classes.textWeight} align='center'>
-                    Created By: Joe DeSantis
-                </Typography>
+                <h6 className={classes.text}>Created By: Joe DeSantis</h6>
             </div>
         </div>
     )
