@@ -11,6 +11,9 @@ const HowItWorksElement3 = (props) => {
             width: '80%',
             margin: '0px 20px 30px 10px',
             alignSelf: 'center',
+            [theme.breakpoints.down('xs')]: {
+                margin: '0px 10px 30px 10px',
+            },
         },
         elementFlex: {
             display: 'flex',

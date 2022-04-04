@@ -12,6 +12,10 @@ const ElementHeader = (props) => {
             width: '80%',
             margin: '40px 10px 10px 0px',
             alignSelf: 'center',
+            [theme.breakpoints.down('xs')]: {
+                margin: '40px 0px 10px 0px',
+            },
+            
         },
         elementFlex: {
             display: 'flex',

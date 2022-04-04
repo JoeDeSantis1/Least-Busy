@@ -15,6 +15,9 @@ const ElementHeader2 = (props) => {
             borderTop: '1px solid',
             borderLeft: '1px dashed',
             borderRight: '1px dashed',
+            [theme.breakpoints.down('xs')]: {
+                margin: '50px 0px 0px 0px',
+            },
         },
         elementFlex: {
             display: 'flex',

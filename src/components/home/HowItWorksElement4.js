@@ -18,6 +18,9 @@ const HowItWorksElement2 = (props) => {
             borderLeft: '1px dashed',
             borderRight: '1px dashed',
             alignSelf: 'center',
+            [theme.breakpoints.down('xs')]: {
+                margin: '0px 0px 25px 0px',
+            },
         },
         elementFlex: {
             display: 'flex',

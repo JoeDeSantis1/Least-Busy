@@ -20,7 +20,7 @@ const HowItWorksElement2 = (props) => {
             borderColor: 'rgba(0,0,0,0)',
             alignSelf: 'center',
             [theme.breakpoints.down('xs')]: {
-                margin: '0px 10px 40px 0px',
+                margin: '0px 0px 40px 0px',
             },
         },
         elementFlex: {
