@@ -5,8 +5,6 @@ import TopPhoto from './TopPhoto';
 import HowItWorks from './HotItWorks';
 import HomepageFooter from './HomepageFooter';
 
-import { Grid } from '@material-ui/core';
-
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
