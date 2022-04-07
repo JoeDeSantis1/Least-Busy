@@ -9,20 +9,66 @@ import BusyChart from './BusyChart';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        background: 'linear-gradient(128deg, rgba(152,168,255,1) 0%, rgba(121,142,255,1) 56%, rgba(98,122,255,1) 100%)',
-        maxWidth: 705,
-        [theme.breakpoints.up('lg')]: {
-            maxWidth: 840,
+        display: 'flex',
+        flexGrow: 2,
+        backgroundColor: 'white',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        borderRadius: '5px',
+        borderColor: 'rgba(0,0,0,0.2)',
+        fontFamily: 'Roboto',
+        // background: 'linear-gradient(128deg, rgba(152,168,255,1) 0%, rgba(121,142,255,1) 56%, rgba(98,122,255,1) 100%)',
+        // maxWidth: 705,
+        // [theme.breakpoints.up('lg')]: {
+        //     maxWidth: 840,
+        // },
+        // [theme.breakpoints.down('lg')]: {
+        //     maxWidth: 730,
+        // },
+        // [theme.breakpoints.down('md')]: {
+        //     maxWidth: 630,
+        // },
+        // [theme.breakpoints.down('sm')]: {
+        //     maxWidth: 705,
+        // }, 
+    },
+    resDesc: {
+        marginLeft: '10px',
+        width: '41%',
+    },
+    hr: {
+        margin: '5px 0px 5px 0px',
+        borderTop: '1px solid',
+        opacity: '50%',
+    },
+    imgDiv: {
+        width: '275px',
+        // borderStyle: 'solid',
+        // borderWidth: '1px',
+        // borderRadius: '3px',
+        // borderColor: 'rgba(0,0,0,0.2)',
+
+        maxHeight: '200px',
+        overflow: 'hidden',
+        textAlign: 'center',
+        transition: 'transform .2s',
+        '&:hover': {
+            transform : 'scale(0.95)',
         },
-        [theme.breakpoints.down('lg')]: {
-            maxWidth: 730,
-        },
-        [theme.breakpoints.down('md')]: {
-            maxWidth: 630,
-        },
-        [theme.breakpoints.down('sm')]: {
-            maxWidth: 705,
-        }, 
+    },
+    img: {
+        position: 'relative',
+        left: '-10px',
+        top: '-25px',
+    },
+    h2: {
+        margin: '10px 0px 0px 0px',
+    },
+    p: {
+        margin: '5px 0px 10px 0px',
+    },
+    a: {
+        cursor: 'pointer',
     },
     isFirstBanner: {
         fontWeight: 400,
@@ -164,52 +210,70 @@ const PlaceCard = (props) => {
     }
 
     return(
-        <div>
-        <Typography align='center' variant='h6'>{isFirst ? `#${listNumber} Least Busy!` : `#${listNumber}`}</Typography>    
-        <Card className={classes.root} elevation={12}>
-            {displayBanner(false)}
-            <CardContent style={{paddingBottom: '0px'}}>
-                <BusyChart busyTimes={busyTimes} screenLarge={screenLarge} screenSize={screenSize}/>
-            </CardContent>
-            <CardActions style={{justifyContent: 'flex-end'}}>
-                <Typography>
-                    Restaurant Info
-                </Typography>
-                <IconButton
-                className={clsx(classes.expand, {
-                    [classes.expandOpen]: expanded,
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-                >
-                <ExpandMoreIcon />
-                </IconButton>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent style={{paddingTop: '5px', paddingBottom: '24px'}}>
-                    <Typography variant='body1' align='center'>
-                        Hours Today:
-                    </Typography>
-                    <Typography variant='body1' align='center' gutterBottom>
-                        {removeDayOfWeek(hours)}
-                    </Typography>
-                    <Typography variant='body1' align='center'>
-                        Phone:
-                    </Typography>
-                    <Typography variant='body1' align='center' gutterBottom>
-                        {phone}
-                    </Typography>  
-                    <Typography variant='body1' align='center'>
-                        Website:
-                    </Typography>
-                    <Typography variant='body1' align='center' gutterBottom>
-                        {website ? <a href={website} target='_blank' rel="noreferrer noopener">{website.substring(0,40)}{website.length > 40 && '...' }</a> : 'No Website'}
-                    </Typography>
-                </CardContent>
-            </Collapse>
-            </Card>
+        <div className={classes.root}>
+            <div className={classes.imgDiv}>
+                {website ?
+                    <a href={website} target='_blank' rel="noreferrer noopener" className={classes.a}><img src={src} alt='res_img' className={classes.img}/></a>
+                :
+                    <img src={src} alt='res_img' className={classes.img}/>
+                }
+            </div>
+            <div className={classes.resDesc}>
+                <h2 className={classes.h2}>{name}</h2>
+                <p className={classes.p}>{address}</p>
+                <hr className={classes.hr}/>
+                <p>Graph</p>
+                <hr className={classes.hr}/>
+                {website ? <p className={classes.p}>Website: <a href={website} target='_blank' rel="noreferrer noopener">{website.substring(0,40)}{website.length > 40 && '...' }</a></p> : <p>'No Website'</p>}
+            </div>
         </div>
+
+        // <div>
+        // <Typography align='center' variant='h6'>{isFirst ? `#${listNumber} Least Busy!` : `#${listNumber}`}</Typography>    
+        // <Card className={classes.root} elevation={12}>
+        //     {displayBanner(false)}
+        //     <CardContent style={{paddingBottom: '0px'}}>
+        //         <BusyChart busyTimes={busyTimes} screenLarge={screenLarge} screenSize={screenSize}/>
+        //     </CardContent>
+        //     <CardActions style={{justifyContent: 'flex-end'}}>
+        //         <Typography>
+        //             Restaurant Info
+        //         </Typography>
+        //         <IconButton
+        //         className={clsx(classes.expand, {
+        //             [classes.expandOpen]: expanded,
+        //         })}
+        //         onClick={handleExpandClick}
+        //         aria-expanded={expanded}
+        //         aria-label="show more"
+        //         >
+        //         <ExpandMoreIcon />
+        //         </IconButton>
+        //     </CardActions>
+        //     <Collapse in={expanded} timeout="auto" unmountOnExit>
+        //         <CardContent style={{paddingTop: '5px', paddingBottom: '24px'}}>
+        //             <Typography variant='body1' align='center'>
+        //                 Hours Today:
+        //             </Typography>
+        //             <Typography variant='body1' align='center' gutterBottom>
+        //                 {removeDayOfWeek(hours)}
+        //             </Typography>
+        //             <Typography variant='body1' align='center'>
+        //                 Phone:
+        //             </Typography>
+        //             <Typography variant='body1' align='center' gutterBottom>
+        //                 {phone}
+        //             </Typography>  
+        //             <Typography variant='body1' align='center'>
+        //                 Website:
+        //             </Typography>
+        //             <Typography variant='body1' align='center' gutterBottom>
+        //                 {website ? <a href={website} target='_blank' rel="noreferrer noopener">{website.substring(0,40)}{website.length > 40 && '...' }</a> : 'No Website'}
+        //             </Typography>
+        //         </CardContent>
+        //     </Collapse>
+        //     </Card>
+        // </div>
     )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { Typography, Grid, Paper, Card, CardContent, Divider, Button, CircularProgress } from '@material-ui/core';
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import NavBar from '../auth/NavBar';
 import PlaceCard from './PlaceCard';
@@ -9,11 +9,36 @@ import AddressDialogPopover from '../dialogForms/AddressDialogPopover';
 import WarningDialogPopover from '../dialogForms/WarningDialogPopover';
 import DashboardBanner from './DashboardBanner';
 import HomepageFooter from '../home/HomepageFooter';
-import { themeDashboard } from '../../styles/theme';
+import TitleElementRightNow from './TitleElementRightNow';
+import TitleElementWhenIGetThere from './TitleElementWhenIGetThere';
+import FiltersBox from './FiltersBox';
 
 const useStyles = makeStyles((theme) => ({
-    nav: {
-        paddingBottom: '70px'
+    root: {
+        display: 'flex',
+        flexFlow: 'column nowrap',
+        alignItems: 'center',
+        // backgroundColor: '#f5f4f1',
+        // height: '100vh'
+    },
+    cardFlex: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        width: '75%',
+        gap: '60px',
+    },
+    stackingCard: {
+        display: 'flex',
+        flexFlow: 'column nowrap',
+        flexGrow: 2,
+        gap: '20px',
+    },
+    background: {
+        position: 'fixed',
+        backgroundColor: '#f5f4f1',
+        height: '100vh',
+        width: '100vw',
+        zIndex: -1,
     },
     paper: {
         background: 'rgba(208,234,240,0)',
@@ -475,20 +500,29 @@ const Dashboard = () => {
     };
 
     return(
-        <ThemeProvider theme={themeDashboard}>
+        <>
+        <div className={classes.background}></div>
         <div className={classes.root}>
-            <div className={classes.nav}>
-                <NavBar />
+            <NavBar />
+            <DashboardBanner />
+            {isRightNow ? 
+                <TitleElementRightNow totalPlaceCards={placeCards.length}/>
+                :
+                <TitleElementWhenIGetThere totalPlaceCards={placeCards.length}/>
+            }
+            <div className={classes.cardFlex}>
+                <div className={classes.stackingCard}>
+                    {placeCards.map((placeCard, index) => {
+                        return <div key={index}>
+                                {placeCard}
+                        </div>
+                        })
+                    }
+                </div>
+                <FiltersBox />
             </div>
-            <div>
-                <DashboardBanner />
-            </div>
-            <div>
-                <Typography className={classes.titleText} align='center'>
-                    Dashboard
-                </Typography>
-            </div>
-            {isRightNow ?
+            
+            {/* {isRightNow ?
                 <Typography className={classes.statusText} align='center' variant='h5'>
                     You are seeing how busy the restaurants are right now (if they are open)
                 </Typography>
@@ -576,9 +610,9 @@ const Dashboard = () => {
             </Grid>
             <Grid container>
                 <HomepageFooter height='100px'/>
-            </Grid>
+            </Grid> */}
         </div>
-        </ThemeProvider>
+        </>
     )
 }
 

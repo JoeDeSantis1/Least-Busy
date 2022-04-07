@@ -62,16 +62,16 @@ const BusyChart = (props) => {
                 <ResponsiveContainer>
                     <AreaChart width={700} height={125} data={dataLarge} margin={{ top: 5, right: 10, left: -25, bottom: 0 }}>
                         <defs>
-                                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#aa10c4" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#aa10c4" stopOpacity={0.4}/>
-                                </linearGradient>
-                            </defs>
-                            <XAxis dataKey="name" tick={{ fill: 'black' }}/>
-                            <YAxis type='number' domain={[0,100]} tick={{ fill: 'black' }}/>
-                            <Tooltip />
-                            <CartesianGrid strokeDasharray="5 5" stroke='#636968'/>
-                            <Area type="monotone" dataKey="busyRating" stroke="#aa10c4" fillOpacity={1} fill="url(#colorUv)" />
+                            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#aa10c4" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#aa10c4" stopOpacity={0.4}/>
+                            </linearGradient>
+                        </defs>
+                        <XAxis dataKey="name" tick={{ fill: 'black' }} scale={['time', 'number']} domain={['dataMin', 'dataMax']} />
+                        <YAxis type='number' domain={[0,100]} tick={{ fill: 'black' }} hide={true}/>
+                        <Tooltip />
+                        {/* <CartesianGrid strokeDasharray="5 5" stroke='#636968'/> */}
+                        <Area type="monotone" dataKey="busyRating" stroke="#aa10c4" fillOpacity={1} fill="url(#colorUv)" />
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
